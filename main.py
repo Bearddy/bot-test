@@ -1,11 +1,11 @@
 import discord
-import asyncio
+import os
 from random import *
 
 
 client = discord.Client()
 
-token = "ODgyNTk2NDQyMzA3NDMyNDg5.YS9r_Q.u1uUEzCE_zGlxdcJJQFOaxczu08"
+
 
 @client.event
 async def on_ready():
@@ -118,5 +118,7 @@ async def on_message(message):
 
         await message.channel.send("단어 리스트중에서" + list[rand] + "\"이/가 나왔습니다")
 
-client.run(token)
+        
+access_token = os.environ("BOT_TOKEN")
+client.run(access_token)
 
